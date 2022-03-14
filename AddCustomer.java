@@ -48,7 +48,7 @@ public class AddCustomer extends JFrame implements ActionListener{
 
 
     Color lpink = (new  Color(250, 200, 250));
-    Color dblue = (new  Color(10, 10, 15));
+    Color dblue = (new  Color(51, 153, 255));
     Color dblue2 = (new  Color(21, 21, 31));
     Color dpink = (new  Color(255, 30, 75));
 
@@ -498,7 +498,9 @@ public class AddCustomer extends JFrame implements ActionListener{
     {
         public void actionPerformed(ActionEvent e)//listener for Close button, initiates when button is clicked
         {
-        	//MainMenu.createAndShowGUI();
+        	AddProduct add = new AddProduct();
+        	
+            //  MainMenu.createAndShowGUI();
             container.setVisible(false);
             dispose();
         }

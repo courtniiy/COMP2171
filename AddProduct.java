@@ -40,7 +40,7 @@ public class AddProduct extends JFrame implements ActionListener {
       private JTextArea notify;
       
       Color lpink = (new  Color(255, 200, 250));
-      Color dblue = (new  Color(10, 10, 15));
+      Color dblue = (new  Color(51, 204, 255));
       Color dblue2 = (new  Color(21, 21, 31));
       Color dpink = (new  Color(255, 30, 75));
       
