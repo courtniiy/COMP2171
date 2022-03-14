@@ -9,7 +9,7 @@ import java.awt.event.*;
 
 public class AddProduct extends JFrame implements ActionListener {
 	  
-	  File file = new File("Products.txt");
+	  static File file = new File("Products.txt");
 	  
       private Container container;
       private JLabel title;
@@ -239,10 +239,17 @@ public class AddProduct extends JFrame implements ActionListener {
                 String stock = pstockc.getText();
                 
           
-
-                if (validateName(n) == false){
+                if (validate(n) == false || n.isEmpty() || n== " "){
                   notify.setText("Name not valid, please enter a valid product name!");
                 }
+                
+                if (brand.isEmpty()){
+                    notify.setText("Brand not valid, please enter a valid product brand!");
+                  }
+                
+                if (desc.isEmpty()){
+                    notify.setText("Description field cannot be empty!");
+                  }
 
                 else if (isInt(price) == false){
                   notify.setText("The price includes invalid character(s). Please enter a valid price");
@@ -315,11 +322,11 @@ public class AddProduct extends JFrame implements ActionListener {
             
             
             else if (event.getSource() == returnBtn){
-            
+            		AddCustomer add = new AddCustomer();
             	
               //  MainMenu.createAndShowGUI();
-              //  container.setVisible(false);
-               // dispose();
+              container.setVisible(false);
+              dispose();
             }
             
             
@@ -349,7 +356,9 @@ public class AddProduct extends JFrame implements ActionListener {
           }
           
           
-          public String productSearch(String p) {
+        
+
+		public String productSearch(String p) {
         	  try{
                   BufferedReader reader = new BufferedReader(new FileReader(file));
                   String line;
@@ -380,15 +389,17 @@ public class AddProduct extends JFrame implements ActionListener {
           
           
           
-          public boolean validateName(String name) {
-              char[] chars = name.toCharArray();
-              for (char c : chars) {
-                  if((!Character.isLetter(c) && !(c=='-') && !(c==' '))) {
-                      return false;
-                  }
-              }
-              return true;
-          }
+		 public boolean validate(String name) {
+		        char[] chars = name.toCharArray();
+		        for (char c : chars) {
+		            if((!Character.isLetter(c) && !(c=='-') && !(c==' '))) {
+		            //if the name contains characters aside from letters, "-" or a space, it is invalid
+		                System.out.println("Invalid Name");
+		                return false;
+		            }
+		        }
+		        return true;
+		    }
           
           
           public  boolean isInt(String number ){

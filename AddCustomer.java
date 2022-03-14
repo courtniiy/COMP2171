@@ -1,5 +1,4 @@
 package tCurlySalesManager;
-
 import java.util.*;
 import java.util.List;
 import java.io.File;
@@ -53,7 +52,7 @@ public class AddCustomer extends JFrame implements ActionListener{
     Color dblue2 = (new  Color(21, 21, 31));
     Color dpink = (new  Color(255, 30, 75));
 
-    public void RegisterCustomer(){
+    public AddCustomer(){
         
 
 
@@ -499,12 +498,13 @@ public class AddCustomer extends JFrame implements ActionListener{
     {
         public void actionPerformed(ActionEvent e)//listener for Close button, initiates when button is clicked
         {
-        	MainMenu.createAndShowGUI();
+        	//MainMenu.createAndShowGUI();
             container.setVisible(false);
             dispose();
         }
 
     }
+
 
 
 
