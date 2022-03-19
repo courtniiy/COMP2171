@@ -1,5 +1,3 @@
-package tCurlySalesManager;
-
 import java.util.*;
 import java.io.*;
 import javax.swing.*;
@@ -7,9 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.*;
 
+
 public class AddProduct extends JFrame implements ActionListener {
 	  
-	  static File file = new File("Products.txt");
+	  File file = new File("Products.txt");
 	  
       private Container container;
       private JLabel title;
@@ -39,8 +38,8 @@ public class AddProduct extends JFrame implements ActionListener {
       private Icon back;
       private JTextArea notify;
       
-      Color lpink = (new  Color(255, 200, 250));
-      Color dblue = (new  Color(51, 204, 255));
+      Color lpink = (new  Color(250, 200, 250));
+      Color dblue = (new  Color(10, 10, 15));
       Color dblue2 = (new  Color(21, 21, 31));
       Color dpink = (new  Color(255, 30, 75));
       
@@ -239,17 +238,10 @@ public class AddProduct extends JFrame implements ActionListener {
                 String stock = pstockc.getText();
                 
           
-                if (validate(n) == false || n.isEmpty() || n== " "){
+
+                if (validateName(n) == false){
                   notify.setText("Name not valid, please enter a valid product name!");
                 }
-                
-                if (brand.isEmpty()){
-                    notify.setText("Brand not valid, please enter a valid product brand!");
-                  }
-                
-                if (desc.isEmpty()){
-                    notify.setText("Description field cannot be empty!");
-                  }
 
                 else if (isInt(price) == false){
                   notify.setText("The price includes invalid character(s). Please enter a valid price");
@@ -322,11 +314,11 @@ public class AddProduct extends JFrame implements ActionListener {
             
             
             else if (event.getSource() == returnBtn){
-            		AddCustomer add = new AddCustomer();
+            
             	
-              //  MainMenu.createAndShowGUI();
-              container.setVisible(false);
-              dispose();
+                MainMenu.createAndShowGUI();
+                container.setVisible(false);
+                dispose();
             }
             
             
@@ -356,9 +348,7 @@ public class AddProduct extends JFrame implements ActionListener {
           }
           
           
-        
-
-		public String productSearch(String p) {
+          public String productSearch(String p) {
         	  try{
                   BufferedReader reader = new BufferedReader(new FileReader(file));
                   String line;
@@ -389,17 +379,15 @@ public class AddProduct extends JFrame implements ActionListener {
           
           
           
-		 public boolean validate(String name) {
-		        char[] chars = name.toCharArray();
-		        for (char c : chars) {
-		            if((!Character.isLetter(c) && !(c=='-') && !(c==' '))) {
-		            //if the name contains characters aside from letters, "-" or a space, it is invalid
-		                System.out.println("Invalid Name");
-		                return false;
-		            }
-		        }
-		        return true;
-		    }
+          public boolean validateName(String name) {
+              char[] chars = name.toCharArray();
+              for (char c : chars) {
+                  if((!Character.isLetter(c) && !(c=='-') && !(c==' '))) {
+                      return false;
+                  }
+              }
+              return true;
+          }
           
           
           public  boolean isInt(String number ){
@@ -419,29 +407,35 @@ public class AddProduct extends JFrame implements ActionListener {
 	Hair Oil
 	$1700
 	20
+
 	Maui Moisture Heal & Hydrate + Shea Butter Hair Mask
 	Maui Moisture Hair Care
 	Repairs dry, damaged hair. Infused with Shea Butter, Coconut Oil and Macadamia Oil
 	$1700
 	7
+
 	Mielle Avocado Moisturizing Hair Milk 
 	Mielle Organics 
 	Moisturizes and hydrates dry, thirsty hair. Great for smoothing and softening the hair for moisture and manageability. 
 	$2300
 	5
+
 	Aussie Miracle Moist Shampoo
 	Aussie
 	Cleanses and hydrates hair for nourished and manageable hair
 	$1250
 	6
+
 	Aussie Miracle Moist Conditioner 
 	Aussie
 	Conditions and softens hair to improve manageability 
 	$1250
 	6
+
 	Cream of Nature Pure Honey Texturizing Curl Setting Lotion 
 	Cream of Nature
 	Defines curls, providing a lasting firm old without the hard crunchy feel
 	$950
 	3 */
 
+	      

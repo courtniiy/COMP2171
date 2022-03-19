@@ -1,5 +1,3 @@
-package tCurlySalesManager;
-
 import java.awt.*;
 import java.util.*;
 import java.util.Scanner;
@@ -9,7 +7,7 @@ public class Customer{
 
     private String fName, lName, email, pNum, address, id;
     private int age;
-    //private Scanner scanner = new Scanner(System.in);  
+    private Scanner scanner = new Scanner(System.in);  
 
     public Customer(String empty){
         this.id = empty;
