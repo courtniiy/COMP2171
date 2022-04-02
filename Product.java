@@ -1,4 +1,4 @@
-
+package tCurlySalesManager;
 
 public class Product {
 	String name,brand, desc, price,stockCount;

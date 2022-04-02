@@ -1,3 +1,4 @@
+package tCurlySalesManager;
 import java.util.*;
 import java.util.List;
 import java.io.File;
@@ -43,17 +44,18 @@ public class AddCustomer extends JFrame implements ActionListener{
     private JButton searchBtn;
     private JButton backBtn;
     private Icon backIcon;
-    private JTextArea notify;
+    //private JTextArea notify;
+    
+    private JFrame frame;
 
+    Color darkblue = (new  Color(86, 96, 240));
+    Color aqua = (new  Color(140, 255, 251));
+    Color white = (new  Color(255, 255, 255));
+    Color lightblue = (new  Color(0,168,243));
+    Color black = (new  Color(0,0,0));
 
-    Color lpink = (new  Color(250, 200, 250));
-    Color dblue = (new  Color(10, 10, 15));
-    Color dblue2 = (new  Color(21, 21, 31));
-    Color dpink = (new  Color(255, 30, 75));
-
-    public void RegisterCustomer(){
+    public AddCustomer(){
         
-
 
         setTitle("TCurly Sales Manager");
         setBounds(300, 90, 900, 700);
@@ -61,162 +63,167 @@ public class AddCustomer extends JFrame implements ActionListener{
         setResizable(false);
 
         container = getContentPane();
-        container.setBackground(dblue);
+        container.setBackground(darkblue);
         container.setLayout(null);
-
+        
           title = new JLabel("New Customer");
           title.setFont(new Font("Arial", Font.BOLD, 35));
           title.setSize(300, 30);
           title.setLocation(300, 30);
-          title.setForeground(dpink);
+          title.setForeground(black);
           container.add(title);
 
           fNameLabel = new JLabel("First Name");
           fNameLabel.setFont(new Font("Arial", Font.BOLD, 20));
           fNameLabel.setSize(150, 20);
           fNameLabel.setLocation(100, 100);
-          fNameLabel.setForeground(lpink);
+          fNameLabel.setForeground(lightblue);
           container.add(fNameLabel);
  
           fNameField = new JTextField();
           fNameField.setFont(new Font("Arial", Font.PLAIN, 15));
           fNameField.setBackground(Color.white);
           fNameField.setSize(190, 20);
-          fNameField.setLocation(250, 100);
+          fNameField.setLocation(310, 100);
           container.add(fNameField);
           
           lNameLabel = new JLabel("Last Name");
           lNameLabel.setFont(new Font("Arial", Font.BOLD, 20));
-          lNameLabel.setSize(100, 20);
+          lNameLabel.setSize(150, 20);
           lNameLabel.setLocation(100, 150);
-          lNameLabel.setForeground(lpink);
+          lNameLabel.setForeground(lightblue);
           container.add(lNameLabel);
  
           lNameField = new JTextField();
           lNameField.setFont(new Font("Arial", Font.PLAIN, 15));
           lNameField.setBackground(Color.white);
           lNameField.setSize(190, 20);
-          lNameField.setLocation(250, 150);
+          lNameField.setLocation(310, 150);
           container.add(lNameField);
 
           emailLabel = new JLabel("Email");
           emailLabel.setFont(new Font("Arial", Font.BOLD, 20));
           emailLabel.setSize(100, 20);
           emailLabel.setLocation(100, 200);
-          emailLabel.setForeground(lpink);
+          emailLabel.setForeground(lightblue);
           container.add(emailLabel);
  
           emailField = new JTextField();
           emailField.setFont(new Font("Arial", Font.PLAIN, 15));
           emailField.setBackground(Color.white);
           emailField.setSize(190, 20);
-          emailField.setLocation(250, 200);
+          emailField.setLocation(310, 200);
           container.add(emailField);
 
           pNumLabel = new JLabel("Phone #");
           pNumLabel.setFont(new Font("Arial", Font.BOLD, 20));
           pNumLabel.setSize(100, 20);
           pNumLabel.setLocation(100, 250);
-          pNumLabel.setForeground(lpink);
+          pNumLabel.setForeground(lightblue);
           container.add(pNumLabel);
  
           pNumField = new JTextField();
           pNumField.setFont(new Font("Arial", Font.PLAIN, 15));
           pNumField.setBackground(Color.white);
           pNumField.setSize(190, 20);
-          pNumField.setLocation(250, 250);
+          pNumField.setLocation(310, 250);
           container.add(pNumField);
           
           addressLabel = new JLabel("Address");
           addressLabel.setFont(new Font("Arial", Font.BOLD, 20));
           addressLabel.setSize(100, 20);
           addressLabel.setLocation(100, 300);
-          addressLabel.setForeground(lpink);
+          addressLabel.setForeground(lightblue);
           container.add(addressLabel);
  
           addressField = new JTextField();
           addressField.setFont(new Font("Arial", Font.PLAIN, 15));
           addressField.setBackground(Color.white);
           addressField.setSize(190, 20);
-          addressField.setLocation(250, 300);
+          addressField.setLocation(310, 300);
           container.add(addressField);
 
           ageLabel = new JLabel("Age");
           ageLabel.setFont(new Font("Arial", Font.BOLD, 20));
           ageLabel.setSize(100, 25);
           ageLabel.setLocation(100, 350);
-          ageLabel.setForeground(lpink);
+          ageLabel.setForeground(lightblue);
           container.add(ageLabel);
  
           ageField = new JTextField(3);
           ageField.setFont(new Font("Arial", Font.PLAIN, 15));
           ageField.setBackground(Color.white);
           ageField.setSize(190, 20);
-          ageField.setLocation(250, 350);
+          ageField.setLocation(310, 350);
           container.add(ageField);
 
           idLabel = new JLabel("Assign ID");
           idLabel.setFont(new Font("Arial", Font.BOLD, 20));
           idLabel.setSize(100, 25);
           idLabel.setLocation(100, 400);
-          idLabel.setForeground(lpink);
+          idLabel.setForeground(lightblue);
           container.add(idLabel);
  
           idField = new JTextField();
           idField.setFont(new Font("Arial", Font.PLAIN, 15));
           idField.setBackground(Color.white);
           idField.setSize(190, 20);
-          idField.setLocation(250, 400);
+          idField.setLocation(310, 400);
           container.add(idField);
 
           submitBtn = new JButton("Submit");
-          submitBtn.setFont(new Font("Arial", Font.BOLD, 25));
-          submitBtn.setForeground(dpink);
-          submitBtn.setBackground(lpink);
-          submitBtn.setSize(340, 50);
-          submitBtn.setLocation(100, 450);
+          submitBtn.setFont(new Font("Arial", Font.BOLD, 18));
+          submitBtn.setForeground(black);
+          submitBtn.setBackground(aqua);
+          submitBtn.setSize(190, 25);
+          submitBtn.setLocation(310, 450);
           submitBtn.addActionListener(this);
           container.add(submitBtn);
   
           resetBtn = new JButton("Reset");
-          resetBtn.setFont(new Font("Arial", Font.BOLD, 25));
-            resetBtn.setForeground(Color.white);
-          resetBtn.setBackground(dpink);
-          resetBtn.setSize(340, 50);
+          resetBtn.setFont(new Font("Arial", Font.BOLD, 18));
+          resetBtn.setForeground(black);
+          resetBtn.setBackground(aqua);
+          resetBtn.setSize(190, 50);
           resetBtn.setLocation(100, 520);
           resetBtn.addActionListener(this);
           container.add(resetBtn);
           
-          notify = new JTextArea();
+          /*notify = new JTextArea();
           notify.setFont(new Font("Arial", Font.PLAIN, 20));
           notify.setSize(300, 320);
           notify.setForeground(Color.white);
-          notify.setBackground(dblue2);
+          notify.setBackground(darkblue);
           notify.setLocation(500, 100);
           notify.setLineWrap(true);
           notify.setEditable(false);
-          notify.setBorder(BorderFactory.createLineBorder(lpink));
-          container.add(notify);
+          notify.setBorder(BorderFactory.createLineBorder(darkblue));
+          container.add(notify); */
 
-          searchBtn = new JButton("Search ID");
-          searchBtn.setFont(new Font("Arial", Font.PLAIN, 15));
-          searchBtn.setBackground(new Color(179, 179, 252));
-          searchBtn.setSize(100, 30);
-          searchBtn.setLocation(700, 440);
+          searchBtn = new JButton("Search");
+          searchBtn.setFont(new Font("Arial", Font.BOLD, 18));
+          searchBtn.setBackground(aqua);
+          searchBtn.setSize(190, 50);
+          searchBtn.setLocation(600, 520);
           searchBtn.addActionListener(this);
           container.add(searchBtn);
+          
+          
           searchbar = new JTextField();
           searchbar.setFont(new Font("Arial", Font.PLAIN, 15));
           searchbar.setBackground(Color.white);
-          searchbar.setSize(190, 30);
-          searchbar.setLocation(500, 440);
+          searchbar.setSize(190, 25);
+          searchbar.setLocation(600, 485);
           container.add(searchbar);
+          
+          
           backIcon = new ImageIcon("icons/exit.png");
-          backBtn= new JButton   ("", backIcon);
+          backBtn= new JButton   ("Return", backIcon);
+          backBtn.setFont(new Font("Arial", Font.BOLD, 18));
           backBtn.addActionListener(new CloseButtonListener());
-          backBtn.setSize(100, 70);
-          backBtn.setBackground(lpink);
-          backBtn.setLocation(700, 500);
+          backBtn.setSize(190, 50);
+          backBtn.setBackground(aqua);
+          backBtn.setLocation(350, 520);
           container.add(backBtn);
 
         setVisible(true);
@@ -235,33 +242,45 @@ public class AddCustomer extends JFrame implements ActionListener{
                 String address = addressField.getText();
                 String age = ageField.getText();
                 String id = idField.getText();
-                notify.setText("");
+                //notify.setText("");
 
                 if(pNum.length() == 7){
                     pNum = "876" + pNum;
                 }
                 
                 if (validateName(fName) == false){
-                    notify.setText("The submitted first name is not valid. Only letters and certain symbols are permitted.");
-                    fNameField.setBackground(lpink);
+                    //notify.setText("The submitted first name is not valid. Only letters and certain symbols are permitted.");
+                	//frame = new JFrame();  
+                	JFrame frame = new JFrame("Information");
+                    frame.setSize(200, 200);
+                    frame.setLocationRelativeTo(null);
+                    frame.setVisible(true);
+                	JOptionPane.showMessageDialog(frame,"Hello, Welcome to Javatpoint.");  
+                    fNameField.setBackground(darkblue);
                 }else if (validateName(lName) == false){
-                    notify.setText("The submitted last name is not valid. Only letters and certain symbols are permitted.");
-                    lNameField.setBackground(lpink);
+                    //notify.setText("The submitted last name is not valid. Only letters and certain symbols are permitted.");
+                    JOptionPane.showMessageDialog(frame, "Hello Java");
+                    lNameField.setBackground(darkblue);
                 }else if (validateEmail(email) == false){
-                    notify.setText("The submitted email is not valid. Please ensure you added the domain.");
-                    emailField.setBackground(lpink);
+                    //notify.setText("The submitted email is not valid. Please ensure you added the domain.");
+                    JOptionPane.showMessageDialog(frame, "Hello Java");
+                    emailField.setBackground(darkblue);
                 }else if (validatePhone(pNum) == false){
-                    notify.setText("The submitted phone number is not valid. Must be 7 or 10 digits and begin with valid digits.");
-                    pNumField.setBackground(lpink);
+                    //notify.setText("The submitted phone number is not valid. Must be 7 or 10 digits and begin with valid digits.");
+                    JOptionPane.showMessageDialog(frame, "Hello Java");
+                    pNumField.setBackground(darkblue);
                 }else if (validateAddress(address) == false){
-                    notify.setText("The submitted email is not valid. Please emsure you added the street and number.");
-                    addressField.setBackground(lpink);
+                    //notify.setText("The submitted email is not valid. Please emsure you added the street and number.");
+                    JOptionPane.showMessageDialog(frame, "Hello Java");
+                    addressField.setBackground(darkblue);
                 }else if (validateAge(Integer.valueOf(age)) == false){
-                    notify.setText("The submitted age name is not valid. Please ensure it is an integer between 0 and 130.");
-                    ageField.setBackground(lpink);
+                    //notify.setText("The submitted age name is not valid. Please ensure it is an integer between 0 and 130.");
+                    JOptionPane.showMessageDialog(frame, "Hello Java");
+                    ageField.setBackground(darkblue);
                 }else if (validateID(id) == false){
-                    notify.setText("The submitted ID name is not valid. Please ensure it includes a letter or a number.");
-                    idField.setBackground(lpink);
+                    //notify.setText("The submitted ID name is not valid. Please ensure it includes a letter or a number.");
+                    JOptionPane.showMessageDialog(frame, "Hello Java");
+                    idField.setBackground(darkblue);
                 }else{
                     String blank ="";
                     fNameField.setText(blank);
@@ -291,7 +310,7 @@ public class AddCustomer extends JFrame implements ActionListener{
                 addressField.setText(blank);
                 ageField.setText(blank);
                 idField.setText(blank);
-                notify.setText(blank);
+                //notify.setText(blank);
                 searchbar.setText(blank);
                 fNameField.setBackground(Color.white);
                 lNameField.setBackground(Color.white);
@@ -305,7 +324,7 @@ public class AddCustomer extends JFrame implements ActionListener{
                 String id = searchbar.getText();
         
                 if (id.isEmpty()){
-                    notify.setText("Please enter the ID you would like to search.");
+                    //notify.setText("Please enter the ID you would like to search.");
                 }
                 
                 else {
@@ -319,7 +338,7 @@ public class AddCustomer extends JFrame implements ActionListener{
                     ageField.setText(blank);
                     idField.setText(blank);
                     
-                    notify.setText(SearchCustomer(id));
+                    //notify.setText(SearchCustomer(id));
                   
                 }
             }
@@ -497,7 +516,9 @@ public class AddCustomer extends JFrame implements ActionListener{
     {
         public void actionPerformed(ActionEvent e)//listener for Close button, initiates when button is clicked
         {
-        	MainMenu.createAndShowGUI();
+        	AddProduct add = new AddProduct();
+        	
+            //  MainMenu.createAndShowGUI();
             container.setVisible(false);
             dispose();
         }
@@ -507,10 +528,5 @@ public class AddCustomer extends JFrame implements ActionListener{
 
 
 
-    // @Override
-    // public void actionPerformed(ActionEvent e) {
-    //     // TODO Auto-generated method stub
-        
-    // }
 
 }

@@ -2,6 +2,8 @@ package tCurlySalesManager;
 
 public class Main {
 	  public static void main(String[] args) {
-	    AddProduct test = new AddProduct();
+	   AddCustomer test = new AddCustomer();
+	    //AddProduct test = new AddProduct();
+	   
 	  }
 	}
