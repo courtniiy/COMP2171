@@ -1,3 +1,5 @@
+package tCurlySalesManager;
+
 
 
 import java.awt.Color;
@@ -63,7 +65,7 @@ public class MainMenu extends JPanel{
         cmdEditProduct.setBackground(Color.white);
         cmdProcessOrder.setBackground(Color.white);
         cmdDeliverySchedule.setBackground(Color.white);
-        cmdClose.setBackground(Color.red);
+        cmdClose.setBackground(Color.blue);
         pnlCommand.setBackground(Color.white);
         pnlDisplay.setBackground(Color.white);
         
@@ -94,21 +96,21 @@ public class MainMenu extends JPanel{
         newContentPane.setOpaque(true); //content panes must be opaque
         frame.setContentPane(newContentPane);
 
-        //Display the window.
+        //Display the window. 
         frame.pack();
         frame.setVisible(true);
         
     }
     
-    public static void main(String[] args) {
+   // public static void main(String[] args) {
         // new EntryScreen();
         // AddProduct ap = new AddProduct();
         // Product p = AddProduct.A
-    }
+   // }
     
     public class AddCustomerButtonListener implements ActionListener{
     	public void actionPerformed(ActionEvent e) { //listener for AddCustomer button, initiates when button is clicked
-    		new AddCustomer().RegisterCustomer();
+    		new AddCustomer();
             frame.setVisible(false);
     	}
     }
@@ -116,6 +118,7 @@ public class MainMenu extends JPanel{
     public class EditCustomerButtonListener implements ActionListener{
     	public void actionPerformed(ActionEvent e) {//listener for EditCustomer button, initiates when button is clicked
     		//function_call();
+            new EditCustomer();
     	}
     }
     
@@ -129,13 +132,15 @@ public class MainMenu extends JPanel{
     public class EditProductButtonListener implements ActionListener{
     	public void actionPerformed(ActionEvent e) {//listener for EditProduct button, initiates when button is clicked
     		new EditProduct();
-		    frame.setVisible(false);
+		    //frame.setVisible(false);
     	}
     }
     
     public class ProcessOrderButtonListener implements ActionListener{
     	public void actionPerformed(ActionEvent e) {//listener for ProcessOrder button, initiates when button is clicked
-    		//function_call();
+    		
+            orderProcessing ap = new orderProcessing();
+            
     	}
     }
     
@@ -143,7 +148,7 @@ public class MainMenu extends JPanel{
     	public void actionPerformed(ActionEvent e) {//listener for DeliverySchedule button, initiates when button is clicked
     		
     		DeliverySchedule.createAndShowGUI();
-    		frame.setVisible(false);
+    		//frame.setVisible(false);
     	}
     }
     

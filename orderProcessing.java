@@ -1,3 +1,4 @@
+package tCurlySalesManager;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -116,7 +117,9 @@ public class orderProcessing extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent event){
         	  
-        File file = new File("Customers.txt");
+        File customer = new File("Customers.txt");
+        File product = new File("Product.txt");
+        File delivery = new File("schedule.txt");
 
 
         if (event.getSource() == submitBtn){
@@ -136,6 +139,8 @@ public class orderProcessing extends JFrame implements ActionListener{
                 String blank ="";
                 custID.setText(blank);
                 prod.setText(blank);
+
+
                 
             }
         }else if (event.getSource() == resetBtn){
@@ -260,5 +265,3 @@ public class orderProcessing extends JFrame implements ActionListener{
 
 
     
-
-

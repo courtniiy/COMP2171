@@ -1,3 +1,6 @@
+package tCurlySalesManager;
+
+
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -220,7 +223,9 @@ public class EditProduct extends JFrame{ //SAM means Search and Modify
     	
         public void actionPerformed(ActionEvent e){
         	
-            System.exit(0);
+            MainMenu.createAndShowGUI();
+            //container.setVisible(false);
+            dispose();
         }
     }    
     
@@ -228,7 +233,9 @@ public class EditProduct extends JFrame{ //SAM means Search and Modify
     	
         public void actionPerformed(ActionEvent e){
         	
-            System.exit(0);
+            MainMenu.createAndShowGUI();
+            //container.setVisible(false);
+            dispose();
         }
     }    
 

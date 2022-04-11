@@ -1,3 +1,5 @@
+package tCurlySalesManager;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -150,7 +152,7 @@ public class DeliverySchedule extends JPanel{
 
             dscan.close();
         }
-        catch(NullPointerException | FileNotFoundException e)
+        catch(FileNotFoundException e)//catch(NullPointerException | FileNotFoundException e)
         {}
         return schedlist;
     }
@@ -261,4 +263,3 @@ class OrderCostSort implements Comparator<DeliveryRecord>{//used to help sort de
 		}
 	}
 }
-

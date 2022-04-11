@@ -1,5 +1,6 @@
 package tCurlySalesManager;
 
+
 import java.awt.*;
 import java.util.*;
 import java.util.Scanner;
@@ -45,6 +46,10 @@ public class Customer{
     }
     public String getID() {
         return this.id;
+    }
+
+    public String toString(){
+        return "ID : " + this.id + "\n" + this.fName + " " + this.lName + "\n" + this.email + "\n" + this.pNum + "\n" + "Age: " + this.age;
     }
 
 }
